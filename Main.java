@@ -1,10 +1,11 @@
 
+import java.beans.Expression;
 import java.util.Scanner;
 public class Main {
     static void error_message(){
         System.out.println("Invalid choice Please Try again");
     }
-    static void answer(int max,int min)
+    static void answer(int min,int max)
     {
         System.out.println("Sum is: " + ((max * (max + 1) / 2) - (min * (min - 1) / 2)));
 
@@ -66,7 +67,17 @@ public class Main {
 
                     } else if(select==2) {
                         System.out.println("Please enter a float");
-                        float input = myObj.nextFloat();
+                        float input=0;
+                        try {
+                            input = myObj.nextFloat();
+                        }
+                        catch (Exception ignored)
+                        {
+                            error_message();
+                            myObj.nextLine();
+                            continue;
+                        }
+
                         int num=(int)input;
                         if(input>=0)
                             answer(1,num);
