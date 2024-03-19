@@ -4,9 +4,10 @@ public class Main {
     static void error_message(){
         System.out.println("Invalid choice Please Try again");
     }
-    static void answer(int x,int y)
+    static void answer(int max,int min)
     {
-        System.out.println("Sum is: " + sum(x, y));
+        System.out.println("Sum is: " + ((max * (max + 1) / 2) - (min * (min - 1) / 2)));
+
     }
     public static void main(String[] args) {
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
@@ -115,8 +116,5 @@ public class Main {
         }
         myObj.close();
     }
-    public static int sum(int min,int max)
-    {
-        return (max*(max+1)/2)-(min*(min-1)/2);
-    }
+
 }
